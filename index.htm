@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<title> Secret Box </title>
+		
+		<style>
+			img {width: 500px height: 500px;
+			}
+			
+			input{width: 20px;}
+			
+			
+		</style>
+		
+		<script>
+			function project(){
+				var output = document.getElementById("output");
+				
+				var rPrice1 = 69.99;
+				var rPrice2 = 499.99;
+				var rPrice3 = 999.99;
+				
+				var wPrice1 = 59.99;
+				var wPrice2 = 429.99;
+				var wPrice3 = 899.99;
+				
+				var quantity1 = parseFloat(document.getElementById("quantity1").value);
+				var quantity2 = parseFloat(document.getElementById("quantity2").value);
+				var quantity3 = parseFloat(document.getElementById("quantity3").value);
+				
+				var cusSubT = (rPrice1 * quantity1) + 
+							  (rPrice2 * quantity2) + 
+							  (rPrice3 * quantity3);
+				
+		
+				var comSubT = (wPrice1 * quantity1) + 
+							  (wPrice2 * quantity2) + 
+							  (wPrice3 * quantity3);
+							  
+				var profit = cusSubT - comSubT;
+				
+			
+				
+				var ship = "";
+				var subtotal = cusSubT;
+				var tax = subtotal * 0.0875;
+				var totalAmt = tax + subtotal + ship;
+				
+				var ttlItemSold = quantity1 + quantity2 + quantity3;
+				var build = "";
+				build += "CUSTOMER INFO:" + "<br>";
+				build += "Customer Subtotal: $" + cusSubT + "<br>";
+				build += "Tax: " + tax + "<br>";
+				build += "+ Shipping Cost: $" + ship + "<br>";
+				if (cusSubT <= 200){
+						ship = 25
+					}
+					else if (cusSubT <= 500){
+						ship = 15
+					}
+					else if (cusSubT <= 1000){
+						ship = 0
+				}
+				build += "------------------" + "<br>";
+				build += "Total: $" + totalAmt + "<br>";
+				
+				build += "<br>";
+				build += "<br>";
+				build += "<br>";
+				
+				
+				build += "COMPANY INFO: " + "<br>";
+				build += "Profit: $" + profit + "<br>";
+				build += "Total Items Sold: " + ttlItemSold + "<br>";
+				
+				output.innerHTML = build;
+			}	
+				
+
+		</script>
+		
+	</head>
+	
+	<body>
+		<div>
+			<h1 style = "background-color:LightGray;"> <strong> <del> Secret Box </del></strong></h1>
+			<p><bdo dir="rtl">.E.V.I.L INC</bdo></p>
+			<br>
+		</div>
+		
+		<div>
+			<h1 style="border:2px solid Tomato;"> RE-PEN </h1>
+			<img src = "colpen.jpg" > <br>
+			<span> $69.99 </span>
+			<p style="color:MediumSeaGreen;"> REWRITE YOUR REPORT CARD NOW... SELLING OUT FAST </p>
+			Quantity: <input type="text" id="quantity1">
+		</div>
+		
+		<br>
+		<br>
+		<br>
+		
+		<div>
+			<h1 style="border:2px solid Tomato;"> INVISIBILITY CLOAK </h1>
+			<img src = "invisC.jpg" > <br>
+			<span> $499.99 </span>
+			<p style="color:MediumSeaGreen;"> HIDE FROM YOUR BULLIES...HIDE FROM YOUR MOM...BE INVISIBLE NOW! </p>
+			Quantity: <input type="text" id="quantity2">
+		</div>
+		
+		<br>
+		<br>
+		<br>
+		
+		<div>
+			<h1 style="border:2px solid Tomato;"> TIME MACHINE </h1>
+			<img src = "tima.png" > <br>
+			<span> $999.99 </span>
+			<p style="color:MediumSeaGreen;"> ALWAYS WANTED TO MEET MICHEAL JACKSON? NOW YOU CAN!... WON'T LAST HURRY! </p>
+			Quantity: <input type="text" id="quantity3">
+		</div>
+		
+		<br>
+		<br>
+		<br>
+		
+		<button onclick ="project()" > Buy </button>
+		<div> 
+			<h1 style="background-color:LightGray;"> Customer & Company Info </h1>
+		
+		</div>
+		
+		<div id ="output"> </div>
+		<div id = "ship"> </div>
+		<div id = "subtotal"> </div>
+		<div id = "tax"> </div>
+		
+			
+		
+		
+		
+		
+	</body>
+	
+</html>
+
+
+
+
+
